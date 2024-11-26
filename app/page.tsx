@@ -1,101 +1,222 @@
-import Image from "next/image";
+"use client"
+
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const searchParams = useSearchParams()
+  const [activeSection, setActiveSection] = useState("about")
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  useEffect(() => {
+    const section = searchParams.get('section')
+    if (section) {
+      setActiveSection(section)
+    }
+  }, [searchParams, setActiveSection])
+
+  const skills = [
+    "Technical Support",
+    "IT Support",
+    "Imaging & Deployment",
+    "Microsoft Excel",
+    "Web Server Administration",
+    "Active Directory",
+    "Advanced Linux",
+    "Scripting",
+    "Oracle Database Administration"
+  ]
+
+  const projects = [
+    {
+      title: "Active Directory Replication",
+      description: "Configured highly available Active Directory environment using Windows Server 2022",
+      link: "/projects/active-directory-replication"
+    },
+    {
+      title: "PfSense Firewall DMZ Configuration",
+      description: "Configured PfSense firewall rules to secure DMZ environment",
+      link: "/projects/pfsense-firewall-dmz-configuration"
+    },
+    {
+      title: "Ubuntu Server Troubleshooting",
+      description: "Diagnosed and resolved boot failure and internet connectivity issues on an Ubuntu 22.04 server",
+      link: "/projects/ubuntu-server-troubleshooting"
+    }
+  ]
+
+  const experiences = [
+    {
+      title: "Member IT Help Desk Co-op",
+      company: "Cincinnati Sports Club",
+      date: "Aug 2024 – Present",
+      description: [
+        "Provide technical support through software and hardware troubleshooting",
+        "Assist in deploying new IT infrastructure and handling member inquiries"
+      ]
+    },
+    {
+      title: "Front Desk Receptionist",
+      company: "Staybridge Suites",
+      date: "May 2024 – Aug 2024",
+      description: [
+        "Delivered exceptional customer service by efficiently handling guest check-ins, reservations, and inquiries",
+        "Managed front desk operations by coordinating with housekeeping, maintenance, and other departments"
+      ]
+    },
+    {
+      title: "Research Assistant",
+      company: "Northern Kentucky University",
+      date: "May 2024 – Aug 2024",
+      description: [
+        "Implemented AWS services like WAF and ALB for optimized traffic distribution",
+        "Conducted experiments and analyzed data for cloud performance improvement"
+      ]
+    },
+    {
+      title: "Research Assistant (Course Development)",
+      company: "Northern Kentucky University",
+      date: "Aug 2024 – Present",
+      description: [
+        "Utilize OpenStack and Docker to design and manage scalable solutions",
+        "Develop and document remote desktop gateway solutions",
+        "Testing new virtual machine software for NKU"
+      ]
+    }
+  ]
+
+  return (
+    <div className="min-h-screen bg-[url('/images/background.jpg')] bg-cover bg-center bg-fixed">
+      <div className="min-h-screen bg-black bg-opacity-60 text-white">
+        <main className="max-w-4xl mx-auto px-4 py-16">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl font-bold mb-4 text-neon-pink animate-pulse">Roshan Tamang</h1>
+            <p className="text-xl mb-8">Computer Information Technology Specialist</p>
+            <Image 
+              src="/images/profile.jpg" 
+              alt="Roshan Tamang" 
+              width={300} 
+              height={300} 
+              className="rounded-full mx-auto border-4 border-neon-blue"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <Button 
+              onClick={() => setActiveSection("about")}
+              className={`bg-neon-pink hover:bg-pink-700 text-white ${activeSection === "about" ? "ring-2 ring-white" : ""}`}
+            >
+              About & Education
+            </Button>
+            <Button 
+              onClick={() => setActiveSection("projects")}
+              className={`bg-neon-blue hover:bg-blue-700 text-white ${activeSection === "projects" ? "ring-2 ring-white" : ""}`}
+            >
+              Projects
+            </Button>
+            <Button 
+              onClick={() => setActiveSection("skills")}
+              className={`bg-neon-green hover:bg-green-700 text-white ${activeSection === "skills" ? "ring-2 ring-white" : ""}`}
+            >
+              Skills
+            </Button>
+            <Button 
+              onClick={() => setActiveSection("experience")}
+              className={`bg-neon-purple hover:bg-purple-700 text-white ${activeSection === "experience" ? "ring-2 ring-white" : ""}`}
+            >
+              Experience
+            </Button>
+          </div>
+
+          {activeSection === "about" && (
+            <>
+              <Card className="bg-black bg-opacity-70 text-white mb-8">
+                <CardContent className="p-6">
+                  <h2 className="text-2xl font-semibold mb-4 text-neon-green">About Me</h2>
+                  <p>
+                    Hey there! I’m Roshan Tamang, an IT enthusiast and senior at NKU, diving deep into Cloud Computing and System Administration. When I’m not tinkering with servers or optimizing systems, you’ll find me exploring new tech trends or problem-solving my way through the digital world. 
+		    With a strong background in desktop support, system admin, and cloud tech, I’m on the lookout for exciting opportunities where I can bring my skills to the table and keep the IT world running smoothly—while having some fun along the way!
+		 </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-black bg-opacity-70 text-white mb-8">
+                <CardContent className="p-6">
+                  <h2 className="text-2xl font-semibold mb-4 text-neon-green">Education</h2>
+                  <h3 className="text-xl font-semibold">Northern Kentucky University</h3>
+                  <p>Bachelor of Science in Computer Information Technology</p>
+                  <p>Minor in Computer Science</p>
+                  <p>Expected Graduation: May 2025</p>
+                  <p>GPA: 3.89</p>
+                </CardContent>
+              </Card>
+            </>
+          )}
+
+          {activeSection === "projects" && (
+            <div className="grid gap-6">
+              {projects.map((project, index) => (
+                <Card key={index} className="bg-black bg-opacity-70 text-white">
+                  <CardContent className="p-6">
+                    <h2 className="text-xl font-semibold mb-2 text-neon-green">{project.title}</h2>
+                    <p className="mb-4">{project.description}</p>
+                    <Link href={`${project.link}?returnTo=projects`} passHref>
+                      <Button className="bg-neon-blue hover:bg-blue-700 text-white relative group">
+                        <span className="absolute -inset-0.5 bg-neon-blue opacity-75 group-hover:opacity-100 rounded-lg blur transition duration-300 group-hover:duration-200 animate-tilt"></span>
+                        <span className="relative">View Details</span>
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+
+          {activeSection === "skills" && (
+            <Card className="bg-black bg-opacity-70 text-white">
+              <CardContent className="p-6">
+                <h2 className="text-2xl font-semibold mb-4 text-neon-green">Skills</h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {skills.map((skill, index) => (
+                    <div key={index} className="relative group">
+                      <div className="absolute -inset-0.5 bg-neon-blue opacity-75 group-hover:opacity-100 rounded-lg blur transition duration-300 group-hover:duration-200 animate-tilt"></div>
+                      <div className="relative px-3 py-2 bg-black rounded-lg leading-none flex items-center justify-center">
+                        <span className="text-neon-blue group-hover:text-white transition duration-300">
+                          {skill}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {activeSection === "experience" && (
+            <div className="grid gap-6">
+              {experiences.map((exp, index) => (
+                <Card key={index} className="bg-black bg-opacity-70 text-white">
+                  <CardContent className="p-6">
+                    <h2 className="text-2xl font-semibold mb-2 text-neon-green">{exp.title}</h2>
+                    <h3 className="text-xl mb-2 text-neon-blue">{exp.company}</h3>
+                    <p className="mb-4 text-neon-pink">{exp.date}</p>
+                    <ul className="list-disc list-inside">
+                      {exp.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+        </main>
+      </div>
     </div>
-  );
+  )
 }
+
+
