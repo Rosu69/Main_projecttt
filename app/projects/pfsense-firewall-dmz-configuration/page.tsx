@@ -5,21 +5,10 @@ import Link from "next/link"
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from "react"
 
-function SearchParamsComponent() {
+function PfSenseFirewallDMZConfigurationContent() {
   const searchParams = useSearchParams()
   const returnTo = searchParams.get('returnTo') || ''
 
-  return (
-    <Link href={`/?section=${returnTo}`} passHref>
-      <Button className="bg-neon-pink hover:bg-pink-700 text-white relative group">
-        <span className="absolute -inset-0.5 bg-neon-pink opacity-75 group-hover:opacity-100 rounded-lg blur transition duration-300 group-hover:duration-200 animate-tilt"></span>
-        <span className="relative">Back to Portfolio</span>
-      </Button>
-    </Link>
-  )
-}
-
-export default function PfSenseFirewallDMZConfiguration() {
   return (
     <div className="min-h-screen bg-[url('/images/background.jpg')] bg-cover bg-center bg-fixed">
       <div className="min-h-screen bg-black bg-opacity-60 text-white p-8">
@@ -44,12 +33,23 @@ export default function PfSenseFirewallDMZConfiguration() {
             <li>Network Security</li>
             <li>Firewall Configuration</li>
           </ul>
-          <Suspense fallback={<div>Loading...</div>}>
-            <SearchParamsComponent />
-          </Suspense>
+          <Link href={`/?section=${returnTo}`} passHref>
+            <Button className="bg-neon-pink hover:bg-pink-700 text-white relative group">
+              <span className="absolute -inset-0.5 bg-neon-pink opacity-75 group-hover:opacity-100 rounded-lg blur transition duration-300 group-hover:duration-200 animate-tilt"></span>
+              <span className="relative">Back to Portfolio</span>
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
+  )
+}
+
+export default function PfSenseFirewallDMZConfiguration() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PfSenseFirewallDMZConfigurationContent />
+    </Suspense>
   )
 }
 

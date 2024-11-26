@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { useSearchParams } from 'next/navigation';
-import { Suspense } from "react";
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { useSearchParams } from 'next/navigation'
+import { Suspense } from "react"
 
 function ActiveDirectoryReplicationContent() {
-  const searchParams = useSearchParams();
-  const returnTo = searchParams.get('returnTo') || '';
+  const searchParams = useSearchParams()
+  const returnTo = searchParams.get('returnTo') || ''
 
   return (
     <div className="min-h-screen bg-[url('/images/background.jpg')] bg-cover bg-center bg-fixed">
@@ -43,7 +43,7 @@ function ActiveDirectoryReplicationContent() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default function ActiveDirectoryReplication() {
@@ -51,6 +51,6 @@ export default function ActiveDirectoryReplication() {
     <Suspense fallback={<div>Loading...</div>}>
       <ActiveDirectoryReplicationContent />
     </Suspense>
-  );
+  )
 }
 

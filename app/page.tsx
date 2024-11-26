@@ -1,5 +1,6 @@
 "use client"
 
+import React, { Suspense } from "react"
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -7,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
-export default function Home() {
+function HomeContent() {
   const searchParams = useSearchParams()
   const [activeSection, setActiveSection] = useState("about")
 
@@ -137,9 +138,10 @@ export default function Home() {
                 <CardContent className="p-6">
                   <h2 className="text-2xl font-semibold mb-4 text-neon-green">About Me</h2>
                   <p>
-                    Hey there! I’m Roshan Tamang, an IT enthusiast and senior at NKU, diving deep into Cloud Computing and System Administration. When I’m not tinkering with servers or optimizing systems, you’ll find me exploring new tech trends or problem-solving my way through the digital world. 
-		    With a strong background in desktop support, system admin, and cloud tech, I’m on the lookout for exciting opportunities where I can bring my skills to the table and keep the IT world running smoothly—while having some fun along the way!
-		 </p>
+                    Computer Information Technology senior with a strong foundation in desktop and workplace support, 
+                    system administration, and cloud computing. Seeking opportunities to apply my skills and knowledge 
+                    in the IT industry.
+                  </p>
                 </CardContent>
               </Card>
 
@@ -219,4 +221,10 @@ export default function Home() {
   )
 }
 
-
+export default function Home() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-black text-white">Loading...</div>}>
+      <HomeContent />
+    </Suspense>
+  )
+}
