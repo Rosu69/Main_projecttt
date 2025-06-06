@@ -21,14 +21,17 @@ function HomeContent() {
 
   const skills = [
     "Technical Support",
-    "IT Support",
+    "Hardware and Software Installation & Troubleshooting",
     "Imaging & Deployment",
-    "Microsoft Excel",
-    "Web Server Administration",
+    "Jira",
+    "Microsoft 365 Admin",
     "Active Directory",
     "Advanced Linux",
     "Scripting",
-    "Oracle Database Administration"
+    "FortiEDR (Endpoint Protection)"
+    "Microsoft Authenticator (MFA)"
+    "Fortimail Cloud, Acronis Perception Point (Email Security)"
+    "VoIP (Hosted UC)"
   ]
 
   const projects = [
@@ -138,9 +141,8 @@ function HomeContent() {
                 <CardContent className="p-6">
                   <h2 className="text-2xl font-semibold mb-4 text-neon-green">About Me</h2>
                   <p>
-                    Computer Information Technology senior with a strong foundation in desktop and workplace support, 
-                    system administration, and cloud computing. Seeking opportunities to apply my skills and knowledge 
-                    in the IT industry.
+                    In my current role, I manage IT systems, provide remote support, oversee workstation setup, implement security solutions, and handle server backups. I am the primary point of contact for support tickets, resolving 95% of issues.
+                    I am passionate about mastering new technologies and solving IT challenges. I am eager to grow into the role of a systems analyst or administrator, where I can further develop my skills and contribute to impactful projects.
                   </p>
                 </CardContent>
               </Card>
@@ -149,10 +151,9 @@ function HomeContent() {
                 <CardContent className="p-6">
                   <h2 className="text-2xl font-semibold mb-4 text-neon-green">Education</h2>
                   <h3 className="text-xl font-semibold">Northern Kentucky University</h3>
-                  <p>Bachelor of Science in Computer Information Technology</p>
+                  <p>Bachelor of Science in Computer Information Technology (Cloud and System Admin)</p>
                   <p>Minor in Computer Science</p>
-                  <p>Expected Graduation: May 2025</p>
-                  <p>GPA: 3.89</p>
+                  <p>GPA: 3.92 (summa cum laude)</p>
                 </CardContent>
               </Card>
             </>
