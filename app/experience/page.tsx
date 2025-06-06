@@ -4,9 +4,21 @@ import { Button } from "@/components/ui/button"
 
 const experiences = [
   {
+    title: "IT Help Desk Technician",
+    company: "Ohio Valley Goodwill Industries",
+    date: "March 2025 – Present",
+    description: [
+      "Administer IT systems including Active Directory, Microsoft Azure, and Microsoft 365."
+      "Provide remote user support and troubleshoot hardware/software issues remotely using tools like TeamViewer and NinjaOne as well as in-person."
+      "Manage workstation setup and maintenance to ensure optimal performance."
+      "Implement and maintain security solutions with Fortinet, including EDR, and FortiMail Cloud."
+      "Serve as the primary point of contact for all support tickets, and oversee VoIP systems, support Office 2019 applications, and handle server backups and domain controllers."
+    ]
+  },
+  {
     title: "Member IT Help Desk Co-op",
     company: "Cincinnati Sports Club",
-    date: "Aug 2024 – Present",
+    date: "Aug 2024 – Dec2024",
     description: [
       "Provide technical support through software and hardware troubleshooting",
       "Assist in deploying new IT infrastructure and handling member inquiries"
@@ -24,7 +36,7 @@ const experiences = [
   {
     title: "Research Assistant (Course Development)",
     company: "Northern Kentucky University",
-    date: "Aug 2024 – Present",
+    date: "Aug 2024 – May2025",
     description: [
       "Utilize OpenStack and Docker to design and manage scalable solutions",
       "Develop and document remote desktop gateway solutions",
