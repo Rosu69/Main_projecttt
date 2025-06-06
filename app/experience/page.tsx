@@ -13,15 +13,6 @@ const experiences = [
     ]
   },
   {
-    title: "Front Desk Receptionist",
-    company: "Staybridge Suites",
-    date: "May 2024 – Aug 2024",
-    description: [
-      "Delivered exceptional customer service by efficiently handling guest check-ins, reservations, and inquiries",
-      "Managed front desk operations by coordinating with housekeeping, maintenance, and other departments"
-    ]
-  },
-  {
     title: "Research Assistant",
     company: "Northern Kentucky University",
     date: "May 2024 – Aug 2024",
