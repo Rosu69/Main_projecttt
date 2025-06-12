@@ -72,6 +72,7 @@ function HomeContent() {
       description: [
         "Provide technical support through software and hardware troubleshooting",
         "Assist in deploying new IT infrastructure and handling member inquiries"
+        ]
     },
     {
       title: "Research Assistant",
