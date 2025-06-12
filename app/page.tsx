@@ -28,9 +28,9 @@ function HomeContent() {
     "Active Directory",
     "Advanced Linux",
     "Scripting",
-    "FortiEDR (Endpoint Protection)"
-    "Microsoft Authenticator (MFA)"
-    "Fortimail Cloud, Acronis Perception Point (Email Security)"
+    "FortiEDR (Endpoint Protection)",
+    "Microsoft Authenticator (MFA)",
+    "Fortimail Cloud, Acronis Perception Point (Email Security)",
     "VoIP (Hosted UC)"
   ]
 
