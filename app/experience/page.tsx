@@ -8,10 +8,10 @@ const experiences = [
     company: "Ohio Valley Goodwill Industries",
     date: "March 2025 – Present",
     description: [
-      "Administer IT systems including Active Directory, Microsoft Azure, and Microsoft 365."
-      "Provide remote user support and troubleshoot hardware/software issues remotely using tools like TeamViewer and NinjaOne as well as in-person."
-      "Manage workstation setup and maintenance to ensure optimal performance."
-      "Implement and maintain security solutions with Fortinet, including EDR, and FortiMail Cloud."
+      "Administer IT systems including Active Directory, Microsoft Azure, and Microsoft 365.",
+      "Provide remote user support and troubleshoot hardware/software issues remotely using tools like TeamViewer and NinjaOne as well as in-person.",
+      "Manage workstation setup and maintenance to ensure optimal performance.",
+      "Implement and maintain security solutions with Fortinet, including EDR, and FortiMail Cloud.",
       "Serve as the primary point of contact for all support tickets, and oversee VoIP systems, support Office 2019 applications, and handle server backups and domain controllers."
     ]
   },
